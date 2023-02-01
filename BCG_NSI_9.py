@@ -28,6 +28,14 @@ assert multiplication(-2, 0) == 0
 # Exercice 2
 
 def chercher(tab, n, i, j):
+    """
+    Recherche dichotomique
+    :param tab:
+    :param n:
+    :param i:
+    :param j:
+    :return: indice de n dans tab ou None si n n'est pas dans tab
+    """
     if i < 0 or j > len(tab):
         return None
     elif i > j:

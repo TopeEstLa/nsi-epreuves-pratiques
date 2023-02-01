@@ -51,6 +51,11 @@ class Pile:
 
 
 def eval_expression(tab):
+    """
+    Évalue une expression postfixée
+    :param tab:
+    :return: resultat
+    """
     p = Pile()
     for e in tab:
         if e != '+' and e != '*':

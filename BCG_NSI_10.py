@@ -48,6 +48,11 @@ class Pile:
 
 
 def parenthesage(ch):
+    """
+    verifie si une expression est bien parenthesée
+    :param ch:
+    :return:  True si l'expression est bien parenthesée, False sinon
+    """
     p = Pile()
     for c in ch:
         if c == '(':
