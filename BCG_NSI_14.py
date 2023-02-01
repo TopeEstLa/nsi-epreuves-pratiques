@@ -26,6 +26,12 @@ assert recherche(4, [2, 4, 4, 3, 4]) == 1
 # Exercice 2
 
 def insere(a, tab):
+    """
+    insere a dans tab en conservant l’ordre croissant
+    :param a:
+    :param tab:
+    :return: nouvelle liste avec a inséré
+    """
     l = list(tab)
     l.append(a)
     i = len(l) - 1

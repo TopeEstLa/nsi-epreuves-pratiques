@@ -1,4 +1,4 @@
-# Exercice 2
+# Exercice 1
 
 def indices_maxi(tab):
     """
