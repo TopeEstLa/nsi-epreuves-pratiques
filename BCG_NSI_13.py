@@ -24,6 +24,12 @@ pieces = [1, 2, 5, 10, 20, 50, 100, 200]
 
 
 def rendu_monnaie(somme_due, somme_versee):
+    """
+    Renvoie le rendu de monnaie
+    :param somme_due:
+    :param somme_versee:
+    :return: liste des pièces à rendre
+    """
     rendu = somme_versee - somme_due
     a_rendre = []
     i = len(pieces) - 1
