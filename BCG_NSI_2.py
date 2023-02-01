@@ -28,6 +28,11 @@ assert indices_maxi([10, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == (10, [0, 9])
 # Exercice 2
 
 def positif(pile):
+    """
+    Retourne une pile contenant uniquement les éléments positifs.
+    :param pile:
+    :return: pile contenant uniquement les éléments positifs
+    """
     pile_1 = list(pile)
     pile_2 = []
 
