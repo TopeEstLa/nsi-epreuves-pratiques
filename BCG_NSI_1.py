@@ -38,7 +38,8 @@ def depouille(urne):
 
 
 assert depouille(['A', 'A', 'A', 'B', 'C', 'B', 'C', 'B', 'C', 'B']) == {'A': 3, 'B': 4, 'C': 3}
-assert depouille(['A', 'A', 'A', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'D', 'D', 'D', 'D', 'D']) == {'A': 3, 'B': 4, 'C': 3, 'D': 5}
+assert depouille(['A', 'A', 'A', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'D', 'D', 'D', 'D', 'D']) == {'A': 3, 'B': 4,
+                                                                                                  'C': 3, 'D': 5}
 assert depouille(["A", "A", "B"]) == {'A': 2, 'B': 1}
 
 
@@ -48,17 +49,16 @@ def vainqueur(election):
     :param election: dictionnaire contenant le nombre de bulletins pour chaque candidat
     :return: le(s) vainqueur(s)
     """
-    vainqueurs = []
+    vainqueur = ''
+    nmax = 0
+    for candidat in election:
+        if election[candidat] > nmax:
+            nmax = election[candidat]
+        vainqueur = candidat
+    list_finale = [nom for nom in election if election[nom] == nmax]
 
-    for candidat, bulletins in election.items():
-        if len(vainqueurs) == 0:
-            vainqueurs.append(candidat)
-        elif election[vainqueurs[0]] == bulletins:
-            vainqueurs.append(candidat)
-        elif election[vainqueurs[0]] < bulletins:
-            vainqueurs = [candidat]
+    return list_finale
 
-    return vainqueurs
 
 assert vainqueur({'A': 3, 'B': 4, 'C': 3}) == ['B']
 assert vainqueur({'A': 3, 'B': 4, 'C': 3, 'D': 5}) == ['D']
