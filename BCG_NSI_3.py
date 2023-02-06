@@ -42,25 +42,26 @@ def affiche(dessin):
     for ligne in dessin:
         for col in ligne:
             if col == 1:
-                print(" *", end="")
-    else:
-        print(" ", end="")
-    print()
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print()
 
 
 def zoomListe(liste_depart, k):
     liste_finale = []
-    for element in liste_depart:
-        liste_finale.append(element * k)
+    for elt in liste_depart:
+        for i in range(k):
+            liste_finale.append(elt)
     return liste_finale
 
 
-def zoomDessin(dessin_depart, k):
-    dessin_finale = []
-    for ligne in dessin_depart:
-        dessin_finale.append(zoomListe(ligne, k))
-    return dessin_finale
+def zoomDessin(grille, k):
+    grille_finale = []
+    for ligne in grille:
+        grille_finale.append(zoomListe(ligne, k))
+    return zoomListe(grille_finale, k)
 
 
 affiche(coeur)
-#affiche(zoomDessin(coeur, 3))
+affiche(zoomDessin(coeur, 2))
